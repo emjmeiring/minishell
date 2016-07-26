@@ -6,13 +6,13 @@
 #    By: jomeirin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/15 12:42:28 by jomeirin          #+#    #+#              #
-#    Updated: 2016/07/15 21:22:05 by jomeirin         ###   ########.fr        #
+#    Updated: 2016/07/26 14:40:30 by jomeirin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-NAME = rtv1
+NAME = rt
 
 FLAG = -Wall -Wextra -Werror -g
 
@@ -48,8 +48,8 @@ endif
 clean:
 		@echo "Cleaning\t\033[34m$(NAME)\033[m"
 		@$(RM) $(OBJ)
-		@cd utils/ && rm -f
-		@cd src/ && rm -f
+		#@cd utils/ && rm -f
+		#@cd src/ && rm -f
 		@echo "**********Done!********"
 
 fclean: clean

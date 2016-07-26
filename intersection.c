@@ -74,9 +74,9 @@ int		intersect_sphere(ray *r, sphere *s, float *closest)
 		t1 = (-B - sqrt(discr)) / 2;
 		if (t0 > t1)
 			t0 = t1;
-		if ((t0 > 0.001f))// && (t0 < *closest))
+		if ((t0 > 0.001f) && (t0 < *closest))
 		{
-			write(1, "hey", 3);
+				//write(1, "hey", 3);
 			*closest = t0;
 			return (1);
 		}
@@ -85,7 +85,7 @@ int		intersect_sphere(ray *r, sphere *s, float *closest)
 }
 
 #define WIDTH  800
-#define HEIGHT 500
+#define HEIGHT 600
 
 int main(void){
 	
@@ -98,7 +98,7 @@ int main(void){
 	int hit;
 	float t;
 
-	t = 2000.00f;
+	
 	s.position.x = 200;
 	s.position.y = 200;
 	s.position.z = 100;
@@ -115,7 +115,7 @@ int main(void){
 		r.origin.y = i;
 		for(j=0;j<WIDTH;j++){
 			r.origin.x = j;
-			
+			t = 2000.00f;
 			hit = intersect_sphere(&r, &s, &t);
 			if(hit)
 			{
